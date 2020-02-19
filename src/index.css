@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root{
+  width: 100%;
+  height: 100%;
+}
+.app{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.section_current{
+    height: 40%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.section_current_content{
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
+.current_weather_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.current_weather_info > h2,h3{
+    margin:0;
+}
+.current_location_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section_prediction{
+    height: calc(60% - 10px);
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+@media( max-width: 500px){
+    .section_prediction{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+.changer{
+    position: absolute;
+    margin-left: 10px;
 }
