@@ -2,6 +2,7 @@ import React from 'react';
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
 import { WeatherItem } from "./WeatherItem";
+import getCityList from "./city";
 
 export class App extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ export class App extends React.Component {
     this.saveResult = this.saveResult.bind(this);
     this.loadLastResult = this.loadLastResult.bind(this);
 
-    this.places = ["Taganrog", "Moscow", "Krasnodar"]
+    this.places = getCityList();
     this.city = null;
     this.state = { res: null, selected: null }
   }
